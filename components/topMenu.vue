@@ -20,19 +20,53 @@
         </small>
       </div>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">
+      <div class="left">
+        <img src="~assets/icons/sovet-logo.svg" alt="Логотип компании" />
+      </div>
+      <div class="right">
+        <menu>
+          <ul class="small-text">
+            <li v-for="element in menu" :key="element.title">
+              <nuxt-link
+                exact
+                no-prefetch
+                active-class="active"
+                :to="element.link"
+              >{{element.title}}</nuxt-link>
+            </li>
+          </ul>
+        </menu>
+
+        <sovetButton text="Заказать звонок" type="dark" class="small-text" />
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    menu: [
+      { title: 'O нас', link: '/a' },
+      { title: 'Услуги', link: '/a' },
+      { title: 'Стоимость', link: '/a' },
+      { title: 'Сотрудники', link: '/a' },
+      { title: 'Контакты', link: '/a' }
+    ]
+  })
+}
+</script>
 
 <style lang="scss" scoped>
 .menu {
   width: 100%;
   .top {
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: white;
+    color: $lightGray;
     background: $darkGray;
     .info {
       max-width: 10rem;
@@ -44,6 +78,39 @@
       img {
         height: 1rem;
         margin-right: 0.3rem;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $gray;
+    padding: 0.5rem 1.5rem;
+    color: $lightGray;
+    .left {
+      img {
+        width: 6rem;
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      menu {
+        ul {
+          display: flex;
+          li {
+            a {
+              padding-bottom: 0.5rem;
+              margin-right: 1.5rem;
+              &.active {
+                border-bottom: 1px solid $lightGray;
+              }
+            }
+          }
+        }
       }
     }
   }

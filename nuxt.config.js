@@ -23,12 +23,13 @@ export default {
   ** Global CSS
   */
   css: [
-    { src: '~assets/scss/main.scss', lang: 'scss' }
+    { src: '~assets/scss/main.scss', lang: 'scss' },
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/ui.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -42,13 +43,20 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  // Чтобы глобально подключать файлы стилей
+  styleResources: {
+    scss: [
+      'assets/scss/_variables.scss'
+    ]
   },
   /*
   ** Build configuration
@@ -57,7 +65,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
