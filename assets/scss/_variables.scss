@@ -1,0 +1,25 @@
+// ! ЦВЕТА
+$veryDarkGrey: #404040;
+$gray: #938B8B;
+$lightGray: #EAE2E2;
+$lemon: #F8F3E1;
+$veryLightGray: #F2F2F2;
+
+// fonts
+@font-face {
+  font-family: "ubuntu";
+  src: url("~assets/fonts/ubuntu/Ubuntu-R.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ubuntuItalic";
+  src: url("~assets/fonts/ubuntu/Ubuntu-RI.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "rubik";
+  src: url("~assets/fonts/rubik/Rubik-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "rubikItalic";
+  src: url("~assets/fonts/rubik/Rubik-Italic.ttf") format("truetype");
+}

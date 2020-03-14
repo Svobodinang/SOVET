@@ -1,0 +1,55 @@
+@import "variables";
+
+// Отмена настроек по умолчанию
+menu,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: unset;
+  text-decoration: unset;
+  &:hover {
+    color: unset;
+    text-decoration: unset;
+  }
+}
+
+// текст
+html {
+  font-size: 22px;
+  font-family: "ubuntu";
+}
+h1,
+h2 {
+  font-family: "rubik";
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 2.1rem;
+  font-weight: 300;
+}
+h3 {
+  font-size: 1.5rem;
+}
+.big-text {
+  font-size: 1.1rem;
+}
+.small-text {
+  font-size: 0.8rem;
+}
+small {
+  font-size: 0.6rem;
+}
