@@ -26,11 +26,16 @@ a {
 ul {
   list-style: none;
 }
+hr {
+  border: unset;
+  background: black;
+  height: 1px;
+}
 
 // текст
 html {
   font-size: 19px;
-  font-family: "ubuntu";
+  font-family: "ubuntuLight";
 }
 h1,
 h2 {
@@ -46,6 +51,7 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
+  font-weight: normal;
 }
 .big-text {
   font-size: 1.1rem !important;

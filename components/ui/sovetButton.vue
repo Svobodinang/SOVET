@@ -1,17 +1,20 @@
 <template>
-  <div>
-    <!-- type = 'dark, light-border, light, w-100' -->
-    <button @click="action()" :class="type">{{text}}</button>
+  <div :class="type">
+    <!-- type = 'dark, light-border, middle, light, w-100, hover-light, hover-dark' -->
+    <button @click="$emit('click')" :class="type">{{text}}</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['text', 'action', 'type']
+  props: ['text', 'type']
 }
 </script>
 
 <style lang="scss" scoped>
+.w-100 {
+  width: 100%;
+}
 button {
   padding: 0;
   font: unset;
@@ -23,16 +26,31 @@ button {
   &:hover {
     cursor: pointer;
   }
+  &.w-100 {
+    width: 100%;
+  }
   &.dark {
     background: $darkGray;
     color: white;
+  }
+  &.middle {
+    background: $gray;
+    color: $lightGray;
   }
   &.light-border {
     border: 1px solid $lightGray;
   }
   &.light {
-    background: #F8F3E1;
+    background: $lemon;
     color: $darkGray;
+  }
+  &.hover-dark:hover {
+    background: $darkGray;
+    color: $lemon;
+  }
+  &.hover-light:hover {
+    background: $lemon;
+    color: $darkGray
   }
 }
 </style>

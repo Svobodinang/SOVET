@@ -22,7 +22,7 @@
     </div>
     <div class="bottom">
       <div class="left">
-        <img src="~assets/icons/sovet-logo.svg" alt="Логотип компании" />
+        <nuxt-link to="/"><img src="~assets/icons/logo/sovet-logo.svg" alt="Логотип компании" /></nuxt-link>
       </div>
       <div class="right">
         <menu>
@@ -48,8 +48,8 @@
 export default {
   data: () => ({
     menu: [
-      { title: 'O нас', link: '/a' },
-      { title: 'Услуги', link: '/a' },
+      { title: 'O нас', link: '/about' },
+      { title: 'Услуги', link: '/services' },
       { title: 'Стоимость', link: '/a' },
       { title: 'Сотрудники', link: '/a' },
       { title: 'Контакты', link: '/a' }

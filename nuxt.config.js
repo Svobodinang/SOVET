@@ -29,7 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/ui.js'
+    '~plugins/ui.js',
+    { src: '~plugins/ymapPlugin.js',  mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
