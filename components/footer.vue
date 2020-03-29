@@ -64,22 +64,22 @@ export default {
       },
       {
         title: 'Стоимость',
-        link: '/',
+        link: '/price',
         positions: []
       },
       {
         title: 'Сотрудники',
-        link: '/',
+        link: '/staff',
         positions: [
           {
             title: 'Руководство',
-            link: '/'
+            link: '/staff/1'
           }
         ]
       },
       {
         title: 'Контакты',
-        link: '/',
+        link: '/contacts',
         positions: []
       }
     ]

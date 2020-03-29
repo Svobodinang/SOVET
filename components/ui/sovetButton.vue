@@ -1,6 +1,6 @@
 <template>
   <div :class="type">
-    <!-- type = 'dark, light-border, middle, light, w-100, hover-light, hover-dark' -->
+    <!-- type = 'dark, light-border, middle, light, w-100, w-50, center, hover-light, hover-dark' -->
     <button @click="$emit('click')" :class="type">{{text}}</button>
   </div>
 </template>
@@ -51,6 +51,13 @@ button {
   &.hover-light:hover {
     background: $lemon;
     color: $darkGray
+  }
+  &.center {
+    display: block;
+    margin: 0 auto;
+  }
+  &.w-50 {
+    width: 50%;
   }
 }
 </style>

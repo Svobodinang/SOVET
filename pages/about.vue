@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-    <div class="title">
-      <h1>О нас</h1>
-    </div>
+
+    <blockTitle title="О нас" />
 
     <about />
 
@@ -40,6 +39,7 @@
 <script>
 import about from '@/components/blocks/about.vue'
 import guarantees from '@/components/blocks/guarantees.vue'
+import blockTitle from '@/components/blocks/blockTitle.vue'
 
 export default {
   data: () => ({
@@ -75,24 +75,14 @@ export default {
   },
   components: {
     about,
-    guarantees
+    guarantees,
+    blockTitle
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .about {
-  .title {
-    text-align: center;
-    color: white;
-    padding: 1.5rem;
-    background-image: url("~assets/img/bg/main.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-  }
-
   .quote {
     padding: 2rem;
     hr {

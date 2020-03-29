@@ -62,3 +62,15 @@ h3 {
 small {
   font-size: 0.6rem !important;
 }
+
+// blocks
+.block-menu {
+  display: flex;
+  .right {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    border-left: 1px solid $gray;
+    color: $darkGray;
+    width: 90%;
+  }
+}

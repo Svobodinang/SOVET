@@ -50,9 +50,9 @@ export default {
     menu: [
       { title: 'O нас', link: '/about' },
       { title: 'Услуги', link: '/services' },
-      { title: 'Стоимость', link: '/a' },
-      { title: 'Сотрудники', link: '/a' },
-      { title: 'Контакты', link: '/a' }
+      { title: 'Стоимость', link: '/price' },
+      { title: 'Сотрудники', link: '/staff' },
+      { title: 'Контакты', link: '/contacts' }
     ]
   })
 }
