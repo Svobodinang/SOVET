@@ -91,7 +91,7 @@ export default {
     color: $lightGray;
     .left {
       img {
-        width: 6rem;
+        width: 8rem;
       }
     }
     .right {

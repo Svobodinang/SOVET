@@ -29,7 +29,7 @@
         </div>
         <div class="block">
           <p>Полный список научных работ</p>
-          <sovetButton text="Посмотреть" type="middle"/>
+          <sovetButton text="Посмотреть" type="middle" @click="openAllWorks()" />
         </div>
       </div>
     </div>
@@ -81,6 +81,15 @@ export default {
     },
     staffById: {}
   }),
+  methods: {
+    openAllWorks () {
+      const link = document.createElement('a')
+      link.setAttribute('href', 'http://sovetpravo.ru/wp-content/uploads/2017/09/Spisok_nauchnykh_trudov_Filatovoy_Anna_Valerievny.pdf')
+      link.setAttribute('target', '_blank')
+      link.setAttribute('download', 'download')
+      link.click()
+    }
+  },
   mounted () {
     this.staffId = this.$route.params.staffId
     this.staffById = this.backEndStaffs[this.staffId]
