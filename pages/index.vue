@@ -11,7 +11,7 @@
         </div>
         <div class="buttons big-text">
           <sovetButton text="Заказать звонок" type="light" />
-          <sovetButton text="Узнать больше" type="dark light-border" />
+          <sovetButton text="Узнать больше" type="dark light-border" @click="$router.push('/about')" />
         </div>
       </div>
     </div>

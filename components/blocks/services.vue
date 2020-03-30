@@ -1,6 +1,6 @@
 <template>
   <div class="services">
-    <h2>Услуги</h2>
+    <h1>Услуги</h1>
     <p>Мы предоставляем полный спектр юридических услуг</p>
     <div class="cards">
       <div class="card legal">
@@ -35,14 +35,14 @@ export default {
 
 <style lang="scss" scoped>
 .services {
-  padding: 3rem;
+  padding: 2rem 3rem;
   padding-bottom: 1rem;
-  h2,
+  h1,
   p {
     text-align: center;
     color: $darkGray;
   }
-  h2 {
+  h1 {
     margin-bottom: 1rem;
   }
   p {

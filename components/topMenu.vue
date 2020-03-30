@@ -4,7 +4,7 @@
       <div class="info">
         <img src="~assets/icons/phone.svg" alt="телефон" />
         <small>
-          <a href="tel:+79055386503">+7 (905) 538 65 03</a>
+          <a href="tel:+74951994836">+7 (495) 199 48 36</a>
         </small>
       </div>
       <div class="info">

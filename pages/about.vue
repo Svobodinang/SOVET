@@ -3,7 +3,7 @@
 
     <blockTitle title="О нас" />
 
-    <about />
+    <about inside="true" />
 
     <div class="quote">
       <hr class="top">
@@ -166,7 +166,8 @@ export default {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-right: -2rem;
+      padding-left: 4rem;
+      width: calc(100% - 4rem);
       .card {
         width: 25%;
         min-width: 10rem;
