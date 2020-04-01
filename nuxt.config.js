@@ -5,12 +5,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Юридичское бюро "СОВЕТ"',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      {name: "viewport", content: 'width=1200'}
+      { name: "viewport", content: 'width=1200' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -19,7 +19,10 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
   /*
   ** Global CSS
   */
@@ -31,7 +34,7 @@ export default {
   */
   plugins: [
     '~plugins/ui.js',
-    { src: '~plugins/ymapPlugin.js',  mode: 'client' }
+    { src: '~plugins/ymapPlugin.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

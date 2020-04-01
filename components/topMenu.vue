@@ -87,11 +87,11 @@ export default {
     justify-content: space-between;
     align-items: center;
     background: $gray;
-    padding: 0.5rem 1.5rem;
+    padding: 0.3rem 1.5rem;
     color: $lightGray;
     .left {
       img {
-        width: 8rem;
+        width: 10rem;
       }
     }
     .right {
@@ -106,7 +106,7 @@ export default {
               padding-bottom: 0.5rem;
               margin-right: 1.5rem;
               &.active {
-                border-bottom: 1px solid $lightGray;
+                border-bottom: 2px solid $lightGray;
               }
             }
           }

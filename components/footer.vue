@@ -119,7 +119,7 @@ export default {
         margin-bottom: 1rem;
         hr {
           background: $lightGray;
-          height: 1px;
+          height: 2px;
           border: unset;
         }
         li {
