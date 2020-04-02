@@ -57,14 +57,16 @@ export default {
     min-width: 9rem;
     .only-text {
       white-space: pre-wrap;
+      margin-bottom: 1rem;
     }
     hr {
-      margin: 0;
+      margin: 1rem 0;
     }
     .social {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      margin-bottom: 1rem;
       span {
         margin-right: 1rem;
         margin-bottom: 0.5rem;
