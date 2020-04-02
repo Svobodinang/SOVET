@@ -21,6 +21,7 @@ export default {
 button {
   padding: 0;
   position: relative;
+  line-height: 100%;
   font: unset;
   font-family: "ubuntu";
   background: unset;

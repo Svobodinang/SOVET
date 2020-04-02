@@ -3,7 +3,7 @@
     <div class="text">
       <h2>О компании</h2>
       <hr />
-      <p>{{about}}</p>
+      <p class="only-text">{{about}}</p>
       <div class="social">
         <span>Мы в социальных сетях</span>
         <a href="https://www.facebook.com/sovetpravo/" target="_blank">
@@ -55,7 +55,9 @@ export default {
     padding: 1rem 2rem 2rem 2rem;
     margin-right: 2rem;
     min-width: 9rem;
-    white-space: pre-wrap;
+    .only-text {
+      white-space: pre-wrap;
+    }
     hr {
       margin: 0;
     }
