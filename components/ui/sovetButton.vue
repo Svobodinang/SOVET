@@ -35,6 +35,7 @@ button {
   &.dark {
     background: $darkGray;
     color: white;
+    border: 2px solid $darkGray;
     .line {
       background: white;
     }
@@ -42,6 +43,7 @@ button {
   &.middle {
     background: $gray;
     color: $lightGray;
+    border: 2px solid $gray;
     .line {
       background: $lightGray;
     }
@@ -52,6 +54,7 @@ button {
   &.light {
     background: $lemon;
     color: $darkGray;
+    border: 2px solid $lemon;
     .line {
       background: $darkGray;
     }

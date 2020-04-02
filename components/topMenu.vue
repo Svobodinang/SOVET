@@ -73,7 +73,7 @@ export default {
       display: flex;
       align-items: center;
       &:not(:last-child) {
-        margin-right: 3rem;
+        margin-right: 4.05rem;
       }
       img {
         height: 1rem;
