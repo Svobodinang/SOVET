@@ -5,7 +5,7 @@
         <h3>Юридическое бюро “Совет”</h3>
         <hr/>
         <p>г. Москва, 5-й проезд Марьиной Рощи, 15А, офис 1</p>
-        <p><a href="tel:+79055386503">+7 (905) 538 65 03</a></p>
+        <p><a href="tel:+74951994836">+7 (495) 199 48 36</a></p>
         <p class="mail"><a href="mailto:info@sovetpravo.ru">info@sovetpravo.ru</a></p>
         <div class="icons">
           <a href="https://www.facebook.com/sovetpravo/" target="_blank"><img src="~assets/icons/social/facebook.svg" alt="facebook"></a>
@@ -18,7 +18,7 @@
     <div class="right">
       <yandex-map
         :coords="coords"
-        zoom="15"
+        zoom="16"
         style="width: 100%; height: 100%;"
         hint-content="Юридическое бюро СОВЕТ"
       >

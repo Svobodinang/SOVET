@@ -5,19 +5,19 @@
     <div class="cards">
       <div class="card legal">
         <h3>Юридическим лицам</h3>
-        <sovetButton text="больше" @click="openService('legal')" type="dark light-border hover-light" />
+        <sovetButton text="Больше" @click="openService('legal')" type="dark light-border hover-light" />
       </div>
       <div class="card individuals">
         <h3>Физическим лицам</h3>
-        <sovetButton text="больше" @click="openService('individuals')" type="dark light-border hover-light" />
+        <sovetButton text="Больше" @click="openService('individuals')" type="dark light-border hover-light" />
       </div>
       <div class="card expertise">
         <h3>Независимая правовая экспертиза</h3>
-        <sovetButton text="больше" @click="openService('expertise')" type="dark light-border hover-light" />
+        <sovetButton text="Больше" @click="openService('expertise')" type="dark light-border hover-light" />
       </div>
       <div class="card detective">
         <h3>Детективные услуги</h3>
-        <sovetButton text="больше" type="dark light-border hover-light" />
+        <sovetButton text="Больше" type="dark light-border hover-light" />
       </div>
     </div>
   </div>

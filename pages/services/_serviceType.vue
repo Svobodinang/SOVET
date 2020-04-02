@@ -35,9 +35,9 @@
               </p>
               <img v-if="service.text && services(activeServiceBlock).length > 1" src="~assets/icons/arrow-down.svg" alt="Подробнее">
             </div>
-            <div v-if="activeServiceTitle === index || services(activeServiceBlock).length === 1" class="info">
-              <p>{{service.text}}</p>
-            </div>
+            <transition name="text">
+              <p v-if="activeServiceTitle === index || services(activeServiceBlock).length === 1" class="info">{{service.text}}</p>
+            </transition>
           </div>
         </div>
       </div>
@@ -270,6 +270,7 @@ export default {
       .info {
         color: $gray;
         white-space: pre-wrap;
+        overflow: hidden;
       }
       &.hover:hover {
         cursor: pointer;
@@ -299,6 +300,23 @@ export default {
         }
       }
     }
+  }
+}
+
+// Анимация
+.text-enter-active {
+  animation: openText 0.3s ease-in;
+}
+.text-leave-active {
+  animation: openText 0.3s ease-in reverse;
+}
+
+@keyframes openText {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 400px;
   }
 }
 </style>
