@@ -1,6 +1,6 @@
 <template>
   <div :class="type">
-    <!-- type = 'dark, light-border, middle, light, w-100, w-50, center, hover-light, hover-dark' -->
+    <!-- type = 'dark, light-border, middle, light, w-100, w-50, center' -->
     <button @click="$emit('click')" :class="type">
       {{text}}
       <div class="line"></div>
@@ -27,8 +27,11 @@ button {
   background: unset;
   border: none;
   padding: 10px 20px;
-  border-radius: 0px;
+  border-radius: 1rem;
   overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
   &.w-100 {
     width: 100%;
   }
@@ -36,27 +39,33 @@ button {
     background: $darkGray;
     color: white;
     border: 2px solid $darkGray;
-    .line {
-      background: white;
+    &:hover {
+      background: $darkGrayHover;
+      border-color: $darkGrayHover;
     }
   }
   &.middle {
     background: $gray;
     color: $lightGray;
     border: 2px solid $gray;
-    .line {
-      background: $lightGray;
+    &:hover {
+      background: $grayHover;
+      border-color: $grayHover;
     }
-  }
-  &.light-border {
-    border: 2px solid $lightGray;
   }
   &.light {
     background: $lemon;
     color: $darkGray;
     border: 2px solid $lemon;
-    .line {
-      background: $darkGray;
+    &:hover {
+      background: $lemonHover;
+      border-color: $lemonHover;
+    }
+  }
+  &.light-border {
+    border: 2px solid $lightGray;
+    &:hover {
+      border-color: $lightGray;
     }
   }
   &.center {
@@ -65,23 +74,6 @@ button {
   }
   &.w-50 {
     width: 50%;
-  }
-  .line {
-    right: 0;
-    left: 0;
-    height: 0;
-    top: -3px;
-    height: 3px;
-    bottom: 0;
-    position: absolute;
-    transition: .2s;
-  }
-}
-
-button:hover {
-  cursor: pointer;
-  .line {
-    top: calc(100% - 3px);
   }
 }
 
