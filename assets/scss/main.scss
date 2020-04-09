@@ -74,3 +74,11 @@ small {
     width: 90%;
   }
 }
+
+// анимация открытия страниц
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
