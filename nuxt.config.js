@@ -34,7 +34,8 @@ export default {
   */
   plugins: [
     '~plugins/ui.js',
-    { src: '~plugins/ymapPlugin.js', mode: 'client' }
+    { src: '~plugins/ymapPlugin.js', mode: 'client' },
+    { src: '~plugins/yandexMetrika', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

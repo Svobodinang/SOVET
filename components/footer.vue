@@ -46,15 +46,15 @@ export default {
         positions: [
           {
             title: 'Юридическим лицам',
-            link: '/'
+            link: '/services/legal'
           },
           {
             title: 'Физическим лицам',
-            link: '/'
+            link: '/services/individuals'
           },
           {
             title: 'Незавимимая правовая экспертиза',
-            link: '/'
+            link: '/services/expertise'
           },
           {
             title: 'Детективные услуги',
