@@ -34,8 +34,7 @@ export default {
   */
   plugins: [
     '~plugins/ui.js',
-    { src: '~plugins/ymapPlugin.js', mode: 'client' },
-    { src: '~plugins/yandexMetrika', mode: 'client' }
+    { src: '~plugins/ymapPlugin.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,7 +49,18 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: '62219872',
+        webvisor: true,
+        // clickmap:true,
+        // useCDN:false,
+        // trackLinks:true,
+        // accurateTrackBounce:true,
+      }
+    ],
   ],
   /*
   ** Axios module configuration
