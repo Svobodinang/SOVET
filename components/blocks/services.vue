@@ -17,7 +17,7 @@
       </div>
       <div class="card detective">
         <h3>Детективные услуги</h3>
-        <sovetButton text="Больше" type="dark light-border hover-light" />
+        <sovetButton @click="openDetective()" text="Больше" type="dark light-border hover-light" />
       </div>
     </div>
   </div>
@@ -28,6 +28,9 @@ export default {
   methods: {
     openService (serviceType) {
       this.$router.push(`/services/${serviceType}`)
+    },
+    openDetective () {
+      window.open('http://detective.moscow/', '_blank')
     }
   }
 }
