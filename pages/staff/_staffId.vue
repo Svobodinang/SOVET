@@ -132,7 +132,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-image: url('~assets/img/staff/1.jpg');
+    background-image: url('~assets/img/staff/1.webp');
   }
 }
 

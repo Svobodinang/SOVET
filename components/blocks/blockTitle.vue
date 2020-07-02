@@ -7,7 +7,7 @@
 <script>
 export default {
   props: ['title']
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -15,7 +15,7 @@ export default {
   text-align: center;
   color: white;
   padding: 1.5rem;
-  background-image: url('~assets/img/bg/main.jpg');
+  background-image: url('~assets/img/bg/main.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

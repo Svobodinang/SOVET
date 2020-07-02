@@ -11,7 +11,11 @@
         </div>
         <div class="buttons big-text">
           <sovetButton text="Заказать звонок" type="light" />
-          <sovetButton text="Узнать больше" type="dark light-border" @click="$router.push('/about')" />
+          <sovetButton
+            text="Узнать больше"
+            type="dark light-border"
+            @click="$router.push('/about')"
+          />
         </div>
       </div>
     </div>
@@ -37,15 +41,14 @@
     </div>
 
     <contacts />
-
   </div>
 </template>
 
 <script>
-import services from '@/components/blocks/services.vue'
-import guarantees from '@/components/blocks/guarantees.vue'
-import contacts from '@/components/blocks/contacts.vue'
-import about from '@/components/blocks/about.vue'
+import services from "@/components/blocks/services.vue";
+import guarantees from "@/components/blocks/guarantees.vue";
+import contacts from "@/components/blocks/contacts.vue";
+import about from "@/components/blocks/about.vue";
 
 export default {
   components: {
@@ -54,12 +57,12 @@ export default {
     contacts,
     about
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .main {
-  background-image: url("~assets/img/bg/main.jpg");
+  background-image: url("~assets/img/bg/main.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -93,7 +96,7 @@ export default {
 }
 
 .form {
-  background-image: url("~assets/img/bg/main.jpg");
+  background-image: url("~assets/img/bg/main.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -105,7 +108,8 @@ export default {
     align-items: center;
     flex-wrap: wrap;
     margin-right: -3rem;
-    h2, p {
+    h2,
+    p {
       color: white;
     }
     h2 {

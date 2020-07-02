@@ -80,7 +80,7 @@ export default {
     width: calc(50% - 4rem);
     min-height: 10rem;
     min-width: 13rem;
-    background-image: url("~assets/img/bg/about.jpg");
+    background-image: url("~assets/img/bg/about.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

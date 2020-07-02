@@ -9,7 +9,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { name: 'yandex-verification', content: 'a63d0ecd18d0bc5a' },
+      { hid: 'description', name: 'description', content: 'Юридическое бюро Совет. Квалифицированная юридическая помощь' },
       { name: "viewport", content: 'width=1200' }
     ],
     link: [
@@ -41,7 +42,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -61,6 +62,7 @@ export default {
         // accurateTrackBounce:true,
       }
     ],
+    'nuxt-compress'
   ],
   /*
   ** Axios module configuration
