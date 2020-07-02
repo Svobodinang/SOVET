@@ -17,17 +17,21 @@ $whiteHover: #F8F8F8;
 @font-face {
   font-family: "ubuntu";
   src: url("~assets/fonts/ubuntu/Ubuntu-R.ttf") format("truetype");
+  font-display: fallback;
 }
 @font-face {
   font-family: "ubuntuLight";
   src: url("~assets/fonts/ubuntu/Ubuntu-L.ttf") format("truetype");
+  font-display: fallback;
 }
 @font-face {
   font-family: "ubuntuItalic";
   src: url("~assets/fonts/ubuntu/Ubuntu-RI.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
   font-family: "rubik";
   src: url("~assets/fonts/rubik/Rubik-Regular.ttf") format("truetype");
+  font-display: fallback;
 }
