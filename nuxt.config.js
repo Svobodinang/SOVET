@@ -67,6 +67,7 @@ export default {
       UserAgent: '*',
       Disallow: '/components',
       Disallow: '/plugins',
+      Disallow: '/layouts',
     }]
   ],
   /*
