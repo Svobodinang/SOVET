@@ -147,7 +147,7 @@ export default {
 
   .docks {
     padding: 3rem 1rem 2rem 1rem;
-    background-image: url("~assets/img/bg/main.jpg");
+    background-image: url("~assets/img/bg/main.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

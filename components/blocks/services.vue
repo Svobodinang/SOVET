@@ -72,16 +72,16 @@ export default {
         color: $lightGray;
       }
       &.legal {
-        background-image: url("~assets/img/bg/services/legal.jpg");
+        background-image: url("~assets/img/bg/services/legal.webp");
       }
       &.individuals {
-        background-image: url("~assets/img/bg/services/individuals.jpg");
+        background-image: url("~assets/img/bg/services/individuals.webp");
       }
       &.expertise {
-        background-image: url("~assets/img/bg/services/expertise.jpg");
+        background-image: url("~assets/img/bg/services/expertise.webp");
       }
       &.detective {
-        background-image: url("~assets/img/bg/services/detective.jpg");
+        background-image: url("~assets/img/bg/services/detective.webp");
       }
     }
   }
