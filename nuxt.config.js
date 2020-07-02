@@ -56,10 +56,10 @@ export default {
       {
         id: '62219872',
         webvisor: true,
-        // clickmap:true,
-        // useCDN:false,
-        // trackLinks:true,
-        // accurateTrackBounce:true,
+        clickmap:true,
+        useCDN:false,
+        trackLinks:true,
+        accurateTrackBounce:true,
       }
     ],
     'nuxt-compress'
