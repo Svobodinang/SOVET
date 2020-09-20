@@ -35,6 +35,8 @@ export default {
   */
   plugins: [
     '~plugins/ui.js',
+    '~plugins/vuelidate.js',
+    '~plugins/vMask.js',
     { src: '~plugins/ymapPlugin.js', mode: 'client' }
   ],
   /*
@@ -75,6 +77,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: "http://admin.detective.moscow/sovet"
   },
   // Чтобы глобально подключать файлы стилей
   styleResources: {

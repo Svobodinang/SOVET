@@ -9,7 +9,6 @@
       <div class="block-menu">
 
         <leftMenu :options="sectionsByType" @clickBlock="clickBlock" :activeBlock="activeServiceBlock" />
-
         <div class="right">
           <div class="load" v-if="loadServices">
             load
@@ -51,7 +50,7 @@ import leftMenu from '@/components/leftMenu'
 export default {
   data: () => ({
     serviceType: null,
-    activeServiceBlock: null,
+    activeServiceBlock: 1,
     activeServiceTitle: null,
     backEndSections: {
       'legal': [
@@ -211,21 +210,11 @@ export default {
   },
   computed: {
     sectionsByType () {
-      if (!this.$store.getters['services/sectionsByServiceType'](this.serviceType)) {
-        this.fetchSections()
-      }
-      if (this.$store.getters['services/sectionsByServiceType'](this.serviceType) && this.$store.getters['services/sectionsByServiceType'](this.serviceType).length > 0) {
-        // eslint-disable-next-line
-        this.activeServiceBlock = this.$store.getters['services/sectionsByServiceType'](this.serviceType)[0].id
-      }
-      return this.$store.getters['services/sectionsByServiceType'](this.serviceType)
+      return this.backEndSections[this.serviceType]
     },
-    services () {
+    services() {
       return (sectionId) => {
-        if (!this.$store.getters['services/servicesBySectionId'](sectionId)) {
-          this.fetchServices(sectionId)
-        }
-        return this.$store.getters['services/servicesBySectionId'](sectionId)
+        return this.backEndServices[sectionId]
       }
     },
     titleByType () {

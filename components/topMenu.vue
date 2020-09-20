@@ -1,5 +1,19 @@
 <template>
   <div class="menu">
+    <sovetModal
+      @sendedForm="showModalForm = false; showModalAccess = true"
+      @closeModal="showModalForm = false"
+      v-if="showModalForm"
+      type="form"
+      :content="message"
+    />
+    <sovetModal
+      @closeModal="showModalAccess = false"
+      v-if="showModalAccess"
+      type="success"
+      :content="message"
+    />
+
     <div class="top">
       <div class="info">
         <img src="~assets/icons/phone.svg" alt="телефон" />
@@ -22,7 +36,9 @@
     </div>
     <div class="bottom">
       <div class="left">
-        <nuxt-link to="/"><img src="~assets/icons/logo/sovet-logo.svg" alt="Логотип компании" /></nuxt-link>
+        <nuxt-link to="/">
+          <img src="~assets/icons/logo/sovet-logo.svg" alt="Логотип компании" />
+        </nuxt-link>
       </div>
       <div class="right">
         <menu>
@@ -38,24 +54,38 @@
           </ul>
         </menu>
 
-        <sovetButton text="Заказать звонок" type="dark" class="small-text" />
+        <sovetButton
+          @click="showModalForm = true"
+          text="Заказать звонок"
+          type="dark"
+          class="small-text"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import sovetModal from "@/components/ui/sovetModal";
+
 export default {
   data: () => ({
     menu: [
-      { title: 'O нас', link: '/about' },
-      { title: 'Услуги', link: '/services' },
-      { title: 'Стоимость', link: '/price' },
-      { title: 'Сотрудники', link: '/staff' },
-      { title: 'Контакты', link: '/contacts' }
-    ]
-  })
-}
+      { title: "O нас", link: "/about" },
+      { title: "Услуги", link: "/services" },
+      { title: "Стоимость", link: "/price" },
+      { title: "Сотрудники", link: "/staff" },
+      { title: "Контакты", link: "/contacts" },
+    ],
+    showModalForm: false,
+    showModalAccess: false,
+    message:
+      "Ваше обращение успешно отправлено. \nНаши специалисты свяжутся с вами в течении часа.",
+  }),
+  components: {
+    sovetModal,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

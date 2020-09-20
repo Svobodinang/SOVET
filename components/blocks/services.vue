@@ -1,19 +1,31 @@
 <template>
   <div class="services">
     <h1>Услуги</h1>
-    <p>Мы предоставляем полный спектр юридических услуг</p>
+    <p>{{slogan}}</p>
     <div class="cards">
       <div class="card legal">
         <h3>Юридическим лицам</h3>
-        <sovetButton text="Больше" @click="openService('legal')" type="dark light-border hover-light" />
+        <sovetButton
+          text="Больше"
+          @click="openService('legal')"
+          type="dark light-border hover-light"
+        />
       </div>
       <div class="card individuals">
         <h3>Физическим лицам</h3>
-        <sovetButton text="Больше" @click="openService('individuals')" type="dark light-border hover-light" />
+        <sovetButton
+          text="Больше"
+          @click="openService('individuals')"
+          type="dark light-border hover-light"
+        />
       </div>
       <div class="card expertise">
         <h3>Независимая правовая экспертиза</h3>
-        <sovetButton text="Больше" @click="openService('expertise')" type="dark light-border hover-light" />
+        <sovetButton
+          text="Больше"
+          @click="openService('expertise')"
+          type="dark light-border hover-light"
+        />
       </div>
       <div class="card detective">
         <h3>Детективные услуги</h3>
@@ -25,15 +37,16 @@
 
 <script>
 export default {
+  props: ['slogan'],
   methods: {
-    openService (serviceType) {
-      this.$router.push(`/services/${serviceType}`)
+    openService(serviceType) {
+      this.$router.push(`/services/${serviceType}`);
     },
-    openDetective () {
-      window.open('http://detective.moscow/', '_blank')
-    }
-  }
-}
+    openDetective() {
+      window.open("http://detective.moscow/", "_blank");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -66,7 +79,7 @@ export default {
       background-position: center center;
       background-repeat: no-repeat;
       margin-bottom: 2rem;
-      box-shadow: 3px 3px 4px #938B8B;
+      box-shadow: 3px 3px 4px #938b8b;
       h3 {
         text-align: center;
         color: $lightGray;

@@ -1,7 +1,7 @@
 <template>
   <div :class="type">
     <!-- type = 'dark, light-border, middle, light, w-100, w-50, center' -->
-    <button @click="$emit('click')" :class="type">
+    <button @click.prevent="$emit('click')" :class="type">
       {{text}}
       <div class="line"></div>
     </button>
@@ -32,6 +32,10 @@ button {
   &:hover {
     cursor: pointer;
   }
+  &:active, &:focus {
+    border: unset;
+    outline: unset;
+  }
   &.w-100 {
     width: 100%;
   }
@@ -43,6 +47,9 @@ button {
       background: $darkGrayHover;
       border-color: $darkGrayHover;
     }
+    &:active, &:focus {
+      border: 2px solid $darkGray;
+    }
   }
   &.middle {
     background: $gray;
@@ -51,6 +58,9 @@ button {
     &:hover {
       background: $grayHover;
       border-color: $grayHover;
+    }
+    &:active, &:focus {
+      border: 2px solid $gray;
     }
   }
   &.light {
@@ -61,11 +71,17 @@ button {
       background: $lemonHover;
       border-color: $lemonHover;
     }
+    &:active, &:focus {
+      border: 2px solid $lemon;
+    }
   }
   &.light-border {
     border: 2px solid $lightGray;
     &:hover {
       border-color: $lightGray;
+    }
+    &:active, &:focus {
+      border: 2px solid $lightGray;
     }
   }
   &.center {
