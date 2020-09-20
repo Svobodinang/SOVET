@@ -1,14 +1,13 @@
 <template>
   <div class="about">
-
     <blockTitle title="О нас" />
 
-    <about inside="true" />
+    <about inside="true" :about="generalInfo.about" />
 
     <div class="quote">
-      <hr class="top">
-      <p class="big-text">Квалифицированная юридическая защита – гарантия конфиденциальности</p>
-      <hr>
+      <hr class="top" />
+      <p class="big-text">{{generalInfo.aboutSlogan}}</p>
+      <hr />
     </div>
 
     <guarantees />
@@ -28,57 +27,74 @@
       <div class="content">
         <div class="card" v-for="dock in docks" :key="dock.title">
           <p>{{dock.title}}</p>
-          <sovetButton type="middle hover-light" text="Посмотреть" @click="openDock(dock.dockName)" />
+          <sovetButton
+            type="middle hover-light"
+            text="Посмотреть"
+            @click="openDock(dock.dockName)"
+          />
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-import about from '@/components/blocks/about.vue'
-import guarantees from '@/components/blocks/guarantees.vue'
-import blockTitle from '@/components/blocks/blockTitle.vue'
+import about from "@/components/blocks/about.vue";
+import guarantees from "@/components/blocks/guarantees.vue";
+import blockTitle from "@/components/blocks/blockTitle.vue";
 
 export default {
+  async asyncData({ $axios, params }) {
+    try {
+      let ans = await $axios.$get(`/generalInfo/`);
+      let generalInfo = ans[0];
+      return { generalInfo };
+    } catch (e) {
+      return { generalInfo: {} };
+    }
+  },
   data: () => ({
+    generalInfo: {},
     goals: [
-      'Обеспечение финансовой и юридической безопасности наших клиентов',
-      'Достижение положительного результата в любой сложившейся ситуации',
-      'Ориентирование наших клиентов на комплексное решение их вопросов',
-      'Стремление к лидерству на рынке правовых услуг'
+      "Обеспечение финансовой и юридической безопасности наших клиентов",
+      "Достижение положительного результата в любой сложившейся ситуации",
+      "Ориентирование наших клиентов на комплексное решение их вопросов",
+      "Стремление к лидерству на рынке правовых услуг",
     ],
     docks: [
       {
-        title: 'Устав АНО Юридическое бюро «Совет»',
-        dockName: 'Ustav.pdf'
+        title: "Устав АНО Юридическое бюро «Совет»",
+        dockName: "Ustav.pdf",
       },
       {
-        title: 'Свидетельство о государственной регистрации',
-        dockName: 'Svidetelstvo-o-registracii-v-MYU-RF.jpg'
+        title: "Свидетельство о государственной регистрации",
+        dockName: "Svidetelstvo-o-registracii-v-MYU-RF.jpg",
       },
       {
-        title: 'Свидетельство о постановке на учет в налоговом органе по месту нахождения',
-        dockName: 'Svidetelstvo-o-postanovke-na-uchet-v-nalogovyy-organ.jpg'
-      }
-    ]
+        title:
+          "Свидетельство о постановке на учет в налоговом органе по месту нахождения",
+        dockName: "Svidetelstvo-o-postanovke-na-uchet-v-nalogovyy-organ.jpg",
+      },
+    ],
   }),
   methods: {
-    openDock (dockName) {
-      const link = document.createElement('a')
-      link.setAttribute('href', 'http://sovetpravo.ru/wp-content/uploads/2017/09/' + dockName)
-      link.setAttribute('target', '_blank')
-      link.setAttribute('download', 'download')
-      link.click()
-    }
+    openDock(dockName) {
+      const link = document.createElement("a");
+      link.setAttribute(
+        "href",
+        "http://sovetpravo.ru/wp-content/uploads/2017/09/" + dockName
+      );
+      link.setAttribute("target", "_blank");
+      link.setAttribute("download", "download");
+      link.click();
+    },
   },
   components: {
     about,
     guarantees,
-    blockTitle
-  }
-}
+    blockTitle,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -125,7 +141,7 @@ export default {
         color: white;
         background-repeat: no-repeat;
         background-position: center center;
-        box-shadow: 3px 3px 4px #938B8B;
+        box-shadow: 3px 3px 4px #938b8b;
         &:first-child {
           background-image: url("~assets/img/bg/goals/1.jpg");
         }
@@ -152,7 +168,8 @@ export default {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    h2, p {
+    h2,
+    p {
       color: white;
       text-align: center;
     }

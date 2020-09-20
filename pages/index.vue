@@ -4,10 +4,9 @@
       <div class="content">
         <div class="text">
           <h1>
-            Юридическое бюро
-            <br />“Совет”
+            {{generalInfo.mainTitle}}
           </h1>
-          <p class="big-text">Квалифицированная юридическая помощь</p>
+          <p class="big-text">{{generalInfo.slogan}}</p>
         </div>
         <div class="buttons big-text">
           <sovetButton text="Заказать звонок" type="light" />
@@ -20,22 +19,20 @@
       </div>
     </div>
 
-    <about />
+    <about :about="generalInfo.about" />
 
-    <services />
+    <services :slogan="generalInfo.servicesSlogan" />
 
     <guarantees />
 
     <div class="form">
       <div class="content">
         <div class="left">
-          <h2>Остались вопросы?</h2>
-          <p>Заполните форму и мы вам перезвоним</p>
+          <h2>{{generalInfo.formTitle}}</h2>
+          <p>{{generalInfo.formText}}</p>
         </div>
         <div class="right">
-          <sovetInput placeholder="Имя" type="w-100" />
-          <sovetInput placeholder="Телефон" type="w-100" />
-          <sovetButton type="dark w-100" text="Заказать звонок" />
+          <sovetForm />
         </div>
       </div>
     </div>
@@ -49,14 +46,40 @@ import services from "@/components/blocks/services.vue";
 import guarantees from "@/components/blocks/guarantees.vue";
 import contacts from "@/components/blocks/contacts.vue";
 import about from "@/components/blocks/about.vue";
+import sovetForm from "@/components/ui/sovetForm";
 
 export default {
+  async asyncData({ $axios, params }) {
+    try {
+      let ans = await $axios.$get(`/generalInfo/`);
+      let generalInfo = ans[0]
+      return { generalInfo };
+    } catch (e) {
+      return { generalInfo: {} };
+    }
+  },
+  data: () => ({
+    generalInfo: {},
+    name: "",
+    tel: "",
+  }),
   components: {
     services,
     guarantees,
     contacts,
-    about
-  }
+    about,
+    sovetForm,
+  },
+  methods: {
+    async sendMail() {
+      try {
+        let form = { name: this.name, tel: this.tel };
+        let ans = await this.$axios.$post("/send_mail", form);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
 };
 </script>
 
