@@ -2,34 +2,20 @@
   <div class="guarantees">
     <h2>Мы гарантируем</h2>
     <div class="content">
-      <div class="block small-text">
-        <img src="~assets/icons/guarantees/1.svg" alt="Конфиденциальность" />
+      <div class="block small-text" v-for="garanty in garanties" :key="garanty.id">
+        <img :src="garanty.picture" alt="Конфиденциальность" />
         <br />
-        <p>Конфиденциальность</p>
-      </div>
-      <div class="block small-text">
-        <img src="~assets/icons/guarantees/2.svg" alt="Оказание квалифицированной юридической помощи" />
-        <br />
-        <p>Оказание квалифицированной юридической помощи</p>
-      </div>
-      <div class="block small-text">
-        <img src="~assets/icons/guarantees/3.svg" alt="Максимальную юридическую защиту Вашему бизнесу" />
-        <br />
-        <p>Максимальную юридическую защиту Вашему бизнесу</p>
-      </div>
-      <div class="block small-text">
-        <img src="~assets/icons/guarantees/4.svg" alt="Своевременность и порядочность исполнения обязательств" />
-        <br />
-        <p>Своевременность и порядочность исполнения обязательств</p>
-      </div>
-      <div class="block small-text">
-        <img src="~assets/icons/guarantees/5.svg" alt="Детальный подход к решению любой проблемы" />
-        <br />
-        <p>Детальный подход к решению любой проблемы</p>
+        <p>{{garanty.title}}</p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['garanties']
+}
+</script>
 
 <style lang="scss" scoped>
 .guarantees {

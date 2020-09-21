@@ -3,9 +3,7 @@
     <div class="main">
       <div class="content">
         <div class="text">
-          <h1>
-            {{generalInfo.mainTitle}}
-          </h1>
+          <h1>{{generalInfo.mainTitle}}</h1>
           <p class="big-text">{{generalInfo.slogan}}</p>
         </div>
         <div class="buttons big-text">
@@ -23,7 +21,7 @@
 
     <services :slogan="generalInfo.servicesSlogan" />
 
-    <guarantees />
+    <guarantees :garanties="garanties" />
 
     <div class="form">
       <div class="content">
@@ -53,13 +51,15 @@ export default {
     try {
       let ans = await $axios.$get(`/generalInfo/`);
       let generalInfo = ans[0]
-      return { generalInfo };
+      let garanties = await $axios.$get(`/Garanty/`);
+      return { generalInfo, garanties };
     } catch (e) {
       return { generalInfo: {} };
     }
   },
   data: () => ({
     generalInfo: {},
+    garanties: [],
     name: "",
     tel: "",
   }),
