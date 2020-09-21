@@ -10,7 +10,7 @@
       <hr />
     </div>
 
-    <guarantees />
+    <guarantees :garanties="garanties" />
 
     <div class="goals">
       <h2>Наши цели</h2>
@@ -48,13 +48,15 @@ export default {
     try {
       let ans = await $axios.$get(`/generalInfo/`);
       let generalInfo = ans[0];
-      return { generalInfo };
+      let garanties = await $axios.$get(`/Garanty/`);
+      return { generalInfo, garanties };
     } catch (e) {
       return { generalInfo: {} };
     }
   },
   data: () => ({
     generalInfo: {},
+    garanties: [],
     goals: [
       "Обеспечение финансовой и юридической безопасности наших клиентов",
       "Достижение положительного результата в любой сложившейся ситуации",
