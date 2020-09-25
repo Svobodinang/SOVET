@@ -1,8 +1,9 @@
 <template>
   <div>
     <loading :done="done" />
+
     <div>
-      <topMenu />
+      <topMenu :generalInfo=generalInfo />
       <main>
         <nuxt />
       </main>
@@ -12,25 +13,31 @@
 </template>
 
 <script>
-import topMenu from '@/components/topMenu.vue'
-import bottom from '@/components/footer.vue'
-import loading from '@/components/loading'
+import topMenu from "@/components/topMenu.vue";
+import bottom from "@/components/footer.vue";
+import loading from "@/components/loading";
 
 export default {
+  data: () => ({
+    done: false,
+    generalInfo: {}
+  }),
+  async beforeMount() {
+    let ans = await this.$axios.$get(`/generalInfo/`)
+    this.generalInfo = ans[0]
+    console.log(ans);
+  },
+  mounted() {
+    setTimeout(() => {
+      this.done = true;
+    }, 1000);
+  },
   components: {
     topMenu,
     bottom,
-    loading
+    loading,
   },
-  data: () => ({
-    done: false
-  }),
-  mounted () {
-    setTimeout(() => {
-      this.done = true
-    }, 1000)
-  }
-}
+};
 </script>
 
 <style>

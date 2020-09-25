@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <contacts />
+    <contacts :generalInfo="generalInfo" />
   </div>
 </template>
 
@@ -54,7 +54,7 @@ export default {
       let garanties = await $axios.$get(`/Garanty/`);
       return { generalInfo, garanties };
     } catch (e) {
-      return { generalInfo: {} };
+      return { generalInfo: {}, garanties: {} };
     }
   },
   data: () => ({

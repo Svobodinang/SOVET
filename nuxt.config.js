@@ -77,7 +77,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: "http://admin.sovetpravo.ru/sovet/"
+    baseURL: "http://admin.detective.moscow/sovet/"
   },
   // Чтобы глобально подключать файлы стилей
   styleResources: {

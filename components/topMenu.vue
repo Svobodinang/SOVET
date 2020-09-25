@@ -18,19 +18,19 @@
       <div class="info">
         <img src="~assets/icons/phone.svg" alt="телефон" />
         <small>
-          <a href="tel:+74951994836">+7 (495) 199 48 36</a>
+          <a :href="`tel:${generalInfo.telephone}`">{{generalInfo.telephone}}</a>
         </small>
       </div>
       <div class="info">
         <img src="~assets/icons/map.svg" alt="адрес" />
         <small>
-          <a>г. Москва, 5-й проезд Марьиной Рощи, 15А, офис1</a>
+          <a>{{generalInfo.adress}}</a>
         </small>
       </div>
       <div class="info">
         <img src="~assets/icons/mail.svg" alt="электронная почта" />
         <small>
-          <a href="mailto:info@sovetpravo.ru">info@sovetpravo.ru</a>
+          <a :href="`mailto:${generalInfo.email}`">{{generalInfo.email}}</a>
         </small>
       </div>
     </div>
@@ -69,6 +69,7 @@
 import sovetModal from "@/components/ui/sovetModal";
 
 export default {
+  props: ['generalInfo'],
   data: () => ({
     menu: [
       { title: "O нас", link: "/about" },
@@ -99,7 +100,7 @@ export default {
     color: $lightGray;
     background: $darkGray;
     .info {
-      max-width: 10rem;
+      max-width: 11rem;
       display: flex;
       align-items: center;
       &:not(:last-child) {
