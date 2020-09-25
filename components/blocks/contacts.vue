@@ -2,15 +2,15 @@
   <div class="contacts">
     <div class="left">
       <div class="card">
-        <h3>Юридическое бюро “Совет”</h3>
+        <h3>{{generalInfo.companyName}}</h3>
         <hr/>
-        <p>г. Москва, 5-й проезд Марьиной Рощи, 15А, офис 1</p>
-        <p><a href="tel:+74951994836">+7 (495) 199 48 36</a></p>
-        <p class="mail"><a href="mailto:info@sovetpravo.ru">info@sovetpravo.ru</a></p>
+        <p>{{generalInfo.adress}}</p>
+        <p><a :href="`tel:${generalInfo.telephone}`">{{generalInfo.telephone}}</a></p>
+        <p class="mail"><a :href="`mailto:${generalInfo.email}`">{{generalInfo.email}}</a></p>
         <div class="icons">
-          <a href="https://www.facebook.com/sovetpravo/" target="_blank"><img src="~assets/icons/social/facebook.svg" alt="facebook"></a>
-          <a href="https://vk.com/sovetpravo" target="_blank"><img src="~assets/icons/social/vk.svg" alt="В контакте"></a>
-          <a href="https://t.me/DaniilFilatov" target="_blank"><img src="~assets/icons/social/telegram.svg" alt="telegram"></a>
+          <a :href="generalInfo.facebook" target="_blank"><img src="~assets/icons/social/facebook.svg" alt="facebook"></a>
+          <a :href="generalInfo.vk" target="_blank"><img src="~assets/icons/social/vk.svg" alt="В контакте"></a>
+          <a :href="generalInfo.telegram" target="_blank"><img src="~assets/icons/social/telegram.svg" alt="telegram"></a>
         </div>
         <sovetButton type="dark" text="Заказать звонок" />
       </div>
@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  props: ['generalInfo'],
   data: () => ({
     coords: [55.798207, 37.620097]
   }),
