@@ -1,5 +1,5 @@
 <template>
-  <div class="services" v-if="serviceBlocks && serviceBlocks.length">
+  <div class="services" v-if="serviceBlocks && serviceBlocks.length && currentServiceBlock">
     <h2>{{ currentServiceBlock.title2 }}</h2>
     <p class="description">{{ currentServiceBlock.text }}</p>
     <div class="block-menu">
