@@ -19,7 +19,7 @@
 
     <about :about="generalInfo.about" />
 
-    <services :slogan="generalInfo.servicesSlogan" />
+    <services :slogan="generalInfo.servicesSlogan" :serviceBlocks="serviceBlocks" />
 
     <guarantees :garanties="garanties" />
 
@@ -52,14 +52,16 @@ export default {
       let ans = await $axios.$get(`/generalInfo/`);
       let generalInfo = ans[0]
       let garanties = await $axios.$get(`/Garanty/`);
-      return { generalInfo, garanties };
+      let serviceBlocks = await $axios.$get('/ServiceBlock/')
+      return { generalInfo, garanties, serviceBlocks };
     } catch (e) {
-      return { generalInfo: {}, garanties: {} };
+      return { generalInfo: {}, garanties: {}, serviceBlocks: {} };
     }
   },
   data: () => ({
     generalInfo: {},
     garanties: [],
+    serviceBlocks: {},
     name: "",
     tel: "",
   }),

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <services :slogan="generalInfo.servicesSlogan" />
+    <services :slogan="generalInfo.servicesSlogan" :serviceBlocks="serviceBlocks" />
   </div>
 </template>
 
@@ -8,17 +8,19 @@
 import services from '@/components/blocks/services.vue'
 
 export default {
-    async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params }) {
     try {
       let ans = await $axios.$get(`/generalInfo/`);
       let generalInfo = ans[0]
-      return { generalInfo };
+      let serviceBlocks = await $axios.$get('/ServiceBlock/')
+      return { generalInfo, serviceBlocks };
     } catch (e) {
-      return { generalInfo: {} };
+      return { generalInfo: {}, serviceBlocks: {} };
     }
   },
   data: () => ({
-    generalInfo: {}
+    generalInfo: {},
+    serviceBlocks: {}
   }),
   components: {
     services
