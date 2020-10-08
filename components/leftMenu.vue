@@ -4,9 +4,9 @@
       <li
         v-for="(option) in options"
         class="big-text"
-        :class="{'active': activeBlock === option.id}"
+        :class="{'active': activeSection === option.id}"
         :key="option.id"
-        @click="$emit('clickBlock', option.id)"
+        @click="$emit('clickSection', option.id)"
       >{{option.title}}</li>
     </ul>
   </div>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  props: ['options', 'activeBlock']
+  props: ['options', 'activeSection']
 }
 </script>
 
