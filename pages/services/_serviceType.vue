@@ -4,7 +4,7 @@
     <p class="description">{{ currentServiceBlock.text }}</p>
     <div class="block-menu">
       <leftMenu
-        v-if="currentServiceSections"
+        v-if="currentServiceSections && activeServiceSection"
         :options="currentServiceSections"
         @clickSection="clickSection"
         :activeSection="activeServiceSection"
