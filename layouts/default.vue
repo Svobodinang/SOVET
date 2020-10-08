@@ -25,7 +25,6 @@ export default {
   async beforeMount() {
     let ans = await this.$axios.$get(`/generalInfo/`)
     this.generalInfo = ans[0]
-    console.log(ans);
   },
   mounted() {
     setTimeout(() => {
