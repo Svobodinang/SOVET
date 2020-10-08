@@ -4,11 +4,12 @@
     <p class="description">{{ currentServiceBlock.text }}</p>
     <div class="block-menu">
       <leftMenu
+        v-if="currentServiceSections"
         :options="currentServiceSections"
         @clickSection="clickSection"
         :activeSection="activeServiceSection"
       />
-      <div class="right">
+      <div class="right" v-if="currentServices">
         <div
           v-for="(service, index) in currentServices"
           :key="index"
