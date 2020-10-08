@@ -1,35 +1,20 @@
 <template>
   <div class="services">
     <h1>Услуги</h1>
-    <p>{{slogan}}</p>
+    <p>{{ slogan }}</p>
     <div class="cards">
-      <div class="card legal">
-        <h3>Юридическим лицам</h3>
+      <div
+        class="card"
+        v-for="block in serviceBlocks"
+        :key="block.id"
+        :style="{'background-image': `url(${block.picture})`}"
+      >
+        <h3>{{ block.title }}</h3>
         <sovetButton
           text="Больше"
-          @click="openService('legal')"
+          @click="openService(block)"
           type="dark light-border hover-light"
         />
-      </div>
-      <div class="card individuals">
-        <h3>Физическим лицам</h3>
-        <sovetButton
-          text="Больше"
-          @click="openService('individuals')"
-          type="dark light-border hover-light"
-        />
-      </div>
-      <div class="card expertise">
-        <h3>Независимая правовая экспертиза</h3>
-        <sovetButton
-          text="Больше"
-          @click="openService('expertise')"
-          type="dark light-border hover-light"
-        />
-      </div>
-      <div class="card detective">
-        <h3>Детективные услуги</h3>
-        <sovetButton @click="openDetective()" text="Больше" type="dark light-border hover-light" />
       </div>
     </div>
   </div>
@@ -37,13 +22,13 @@
 
 <script>
 export default {
-  props: ['slogan'],
+  props: ["slogan", "serviceBlocks"],
   methods: {
-    openService(serviceType) {
-      this.$router.push(`/services/${serviceType}`);
-    },
-    openDetective() {
-      window.open("http://detective.moscow/", "_blank");
+    openService(block) {
+      if (block.title === 'Детективные услуги')
+        window.open(block.pageName, "_blank");
+      else
+        this.$router.push(`/services/${block.pageName}`);
     },
   },
 };
@@ -83,18 +68,6 @@ export default {
       h3 {
         text-align: center;
         color: $lightGray;
-      }
-      &.legal {
-        background-image: url("~assets/img/bg/services/legal.webp");
-      }
-      &.individuals {
-        background-image: url("~assets/img/bg/services/individuals.webp");
-      }
-      &.expertise {
-        background-image: url("~assets/img/bg/services/expertise.webp");
-      }
-      &.detective {
-        background-image: url("~assets/img/bg/services/detective.webp");
       }
     }
   }
