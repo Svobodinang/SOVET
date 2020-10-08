@@ -1,7 +1,7 @@
 <template>
-  <div class="services" v-if="serviceBlocks && serviceBlocks.length && currentServiceBlock">
-    <h2>{{ currentServiceBlock.title2 }}</h2>
-    <p class="description">{{ currentServiceBlock.text }}</p>
+  <div class="services">
+    <h2 v-if="currentServiceBlock">{{ currentServiceBlock.title2 }}</h2>
+    <p class="description" v-if="currentServiceBlock">{{ currentServiceBlock.text }}</p>
     <div class="block-menu">
       <leftMenu
         v-if="currentServiceSections && activeServiceSection"
@@ -104,7 +104,7 @@ export default {
   },
   computed: {
     currentServiceSections() {
-      if (!this.serviceSections) return []
+      if (!this.serviceSections || !this.currentServiceBlock) return []
       return this.serviceSections.filter(s => s.serviceBlock === this.currentServiceBlock.id)
     },
     services() {
