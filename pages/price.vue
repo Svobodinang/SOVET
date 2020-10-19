@@ -5,10 +5,10 @@
     <p class="big-text">Мы предоставляем профессиональный расширенный спектр услуг</p>
 
     <div class="content block-menu">
-      <leftMenu :options="blocks" :activeBlock="activeBlock" @clickBlock="clickBlock" />
+      <leftMenu :options="blocks" :activeSection="activeSection" @clickSection="clickSection" />
 
       <div class="right">
-        <div class="section" v-for="section in priceByBlock[activeBlock]" :key="section.block">
+        <div class="section" v-for="section in priceByBlock[activeSection]" :key="section.block">
           <p class="big-text" v-if="section.block">{{section.block}}</p>
           <div class="line" v-if="section.block"></div>
           <div class="blocks">
@@ -33,7 +33,7 @@
 import leftMenu from '@/components/leftMenu'
 export default {
   data: () => ({
-    activeBlock: 1,
+    activeSection: 1,
     blocks: [
       { id: 1, title: 'Консультации' },
       { id: 2, title: 'Подготовка документов' },
@@ -327,8 +327,8 @@ export default {
     }
   }),
   methods: {
-    clickBlock (blockId) {
-      this.activeBlock = blockId
+    clickSection (blockId) {
+      this.activeSection = blockId
     }
   },
   components: {
