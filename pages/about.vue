@@ -21,16 +21,16 @@
       </div>
     </div>
 
-    <div class="docks">
+    <div class="docs">
       <h2>Наши документы</h2>
       <p>Мы ничего не скрываем от вас</p>
-      <div class="content">
-        <div class="card" v-for="dock in docks" :key="dock.title">
-          <p>{{dock.title}}</p>
+      <div class="content" v-if="docs.length">
+        <div class="card" v-for="doc in docs" :key="doc.title">
+          <p>{{doc.title}}</p>
           <sovetButton
             type="middle hover-light"
             text="Посмотреть"
-            @click="openDock(dock.dockName)"
+            @click="openDock(doc.document)"
           />
         </div>
       </div>
@@ -49,34 +49,21 @@ export default {
       let ans = await $axios.$get(`/generalInfo/`);
       let generalInfo = ans[0];
       let garanties = await $axios.$get(`/Garanty/`);
-      return { generalInfo, garanties };
+      let docs = await $axios.$get('/Docs/')
+      return { generalInfo, garanties, docs };
     } catch (e) {
-      return { generalInfo: {} };
+      return { generalInfo: {}, docs: [] };
     }
   },
   data: () => ({
     generalInfo: {},
     garanties: [],
+    docs: [],
     goals: [
       "Обеспечение финансовой и юридической безопасности наших клиентов",
       "Достижение положительного результата в любой сложившейся ситуации",
       "Ориентирование наших клиентов на комплексное решение их вопросов",
       "Стремление к лидерству на рынке правовых услуг",
-    ],
-    docks: [
-      {
-        title: "Устав АНО Юридическое бюро «Совет»",
-        dockName: "Ustav.pdf",
-      },
-      {
-        title: "Свидетельство о государственной регистрации",
-        dockName: "Svidetelstvo-o-registracii-v-MYU-RF.jpg",
-      },
-      {
-        title:
-          "Свидетельство о постановке на учет в налоговом органе по месту нахождения",
-        dockName: "Svidetelstvo-o-postanovke-na-uchet-v-nalogovyy-organ.jpg",
-      },
     ],
   }),
   methods: {
@@ -84,7 +71,7 @@ export default {
       const link = document.createElement("a");
       link.setAttribute(
         "href",
-        "http://sovetpravo.ru/wp-content/uploads/2017/09/" + dockName
+        dockName
       );
       link.setAttribute("target", "_blank");
       link.setAttribute("download", "download");
@@ -163,7 +150,7 @@ export default {
     }
   }
 
-  .docks {
+  .docs {
     padding: 3rem 1rem 2rem 1rem;
     background-image: url("~assets/img/bg/main.webp");
     background-repeat: no-repeat;
